@@ -24,6 +24,8 @@ RUN /usr/bin/unzip -q /tmp/pentaho-server.zip -d  $PENTAHO_HOME; \
     rm -f /tmp/pentaho-server.zip; 
 RUN rm -f /opt/pentaho/pentaho-server/promptuser.sh
 
+EXPOSE 8080
+
 COPY run_pentaho_server.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/run_pentaho_server.sh
 CMD /usr/local/bin/run_pentaho_server.sh

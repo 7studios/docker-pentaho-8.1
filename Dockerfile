@@ -1,7 +1,8 @@
 FROM openjdk:latest
-MAINTAINER everyonce https://github.com/everyonce
+MAINTAINER greggentling https://github.com/greggentling
 
 ENV PENTAHO_HOME /opt/pentaho
+
 
 RUN . /etc/environment
 ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64
@@ -23,6 +24,7 @@ RUN wget --progress=dot:giga https://downloads.sourceforge.net/project/pentaho/P
 RUN /usr/bin/unzip -q /tmp/pentaho-server.zip -d  $PENTAHO_HOME; \
     rm -f /tmp/pentaho-server.zip; 
 RUN rm -f /opt/pentaho/pentaho-server/promptuser.sh
+
 
 EXPOSE 8080
 
